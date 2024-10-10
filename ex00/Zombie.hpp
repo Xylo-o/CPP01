@@ -6,16 +6,22 @@
 /*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:11:50 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/09/18 16:37:04 by adprzyby         ###   ########.fr       */
+/*   Updated: 2024/10/10 16:59:48 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include <iostream>
+#include <string>
 
 class Zombie {
 	public:
+		Zombie( std::string name );
+		~Zombie( void );
 		void announce( void );
-		void setName( std::string name );
 	private:
 		std::string name;	
 };
+
+Zombie *newZombie( std::string name );
+void	randomChump( std::string name );
