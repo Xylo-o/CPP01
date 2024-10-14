@@ -6,7 +6,7 @@
 /*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 15:05:57 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/10/14 16:17:12 by adprzyby         ###   ########.fr       */
+/*   Updated: 2024/10/14 17:56:03 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@
 
 class HumanB {
 	public:
-		Weapon Weapon;
-		std::string name;
+		HumanB( std::string name);
+		void setWeapon(Weapon& weapon);
+		void attack() const;
 	private:
+		Weapon* weapon;
+		std::string name;	
 };
