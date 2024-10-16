@@ -6,7 +6,7 @@
 /*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 18:02:48 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/10/15 13:26:09 by adprzyby         ###   ########.fr       */
+/*   Updated: 2024/10/15 13:37:41 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,4 +14,3 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-
