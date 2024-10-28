@@ -6,7 +6,7 @@
 /*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 14:30:26 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/10/28 15:57:59 by adprzyby         ###   ########.fr       */
+/*   Updated: 2024/10/28 17:17:12 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,13 @@ void Harl::error( void ) {
 }
 
 void Harl::complain( std::string level ) {
-	if (level.compare("DEBUG") == 0) {
-		debug();
+	void (Harl::*functions[])() = { &Harl::debug, &Harl::info, &Harl::warning, &Harl::error };
+	std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	for (size_t i = 0; i < 4; ++i) {
+		if (levels[i] == level) {
+			(this->*functions[i])();
+			return ;
+		}
 	}
-	else if (level.compare("INFO") == 0) {
-		info();
-	}
-	else if (level.compare("WARNING") == 0) {
-		warning();
-	}
-	else if (level.compare("ERROR") == 0) {
-		error();
-	}
-	else {
-		std::cout << "I'll shut up...\n";
-	}
+	std::cout << "Invalid complaint\n";
 }
