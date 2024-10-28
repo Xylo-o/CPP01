@@ -1,6 +1,6 @@
 NAME := sed
 CC := c++
-CCFLAGS := -Werror -Wextra -Wall
+CCFLAGS := -Werror -Wextra -Wall 
 
 SRC := main.cpp \
 
