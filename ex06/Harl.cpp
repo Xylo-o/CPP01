@@ -6,7 +6,7 @@
 /*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 17:22:17 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/10/31 15:28:20 by adprzyby         ###   ########.fr       */
+/*   Updated: 2024/10/31 16:37:29 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,35 +29,21 @@ void Harl::error( void ) {
 }
 
 void Harl::complain( std::string level ) {
-	int complaint = 0;
+	int complaints = -1;
 	void (Harl::*functions[])() = { &Harl::debug, &Harl::info, &Harl::warning, &Harl::error };
 	std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	for (size_t i = 0; i < 4; ++i) {
+	for (int i = 0; i < 4; ++i) {
+		// printf("%d\n", i);
 		if (levels[i] == level) {
-			complaint = i;
+			complaints = i;
 		}
 	}
-	switch (complaint) {
+	switch (complaints) {
+		case 0:
 		case 1:
-			for (int i = complaint; i <= 4; i++) {
-				(this->*functions[i])();
-				std::cout << std::endl;
-			}
-			break;
 		case 2:
-			for (int i = complaint; i <= 4; i++) {
-				(this->*functions[i])();
-				std::cout << std::endl;
-			}
-			break;
 		case 3:
-			for (int i = complaint; i <= 4; i++) {
-				(this->*functions[i])();
-				std::cout << std::endl;
-			}			
-			break;
-		case 4:
-			for (int i = complaint; i <= 4; i++) {
+			for (int i = complaints; i < 4; i++) {
 				(this->*functions[i])();
 				std::cout << std::endl;
 			}			
