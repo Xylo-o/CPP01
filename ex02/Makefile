@@ -1,6 +1,6 @@
 NAME := HTIB
 CC := c++
-CCFLAGS := -Werror -Wextra -Wall
+CCFLAGS := -Werror -Wextra -Wall -std=c++98
 
 SRC := main.cpp \
 
